@@ -47,31 +47,25 @@ class SocialNetwork:
             friends_str = ", ".join(friend_names)
             print(f"{name} is friends with: {friends_str}")
 
-# --- Testing the Network ---
-
 network = SocialNetwork()
 
-# 1. Add 6 people
-users = ["Alex", "Jordan", "Morgan", "Taylor", "Casey", "Riley"]
+users = ["Madison", "Jordan", "Morgan", "Taylor", "Casey", "Riley"]
 for user in users:
     network.add_person(user)
 
-# 2. Test Edge Case: Duplicate Person
-network.add_person("Alex") 
+network.add_person("Jordan") 
 
-# 3. Create 9 friendships
-network.add_friendship("Alex", "Jordan")
-network.add_friendship("Alex", "Morgan")
+network.add_friendship("Madison", "Jordan")
+network.add_friendship("Madison", "Morgan")
 network.add_friendship("Jordan", "Taylor")
 network.add_friendship("Morgan", "Casey")
 network.add_friendship("Taylor", "Riley")
 network.add_friendship("Casey", "Riley")
 network.add_friendship("Morgan", "Riley")
-network.add_friendship("Alex", "Taylor")
-network.add_friendship("Casey", "Alex")
+network.add_friendship("Madison", "Taylor")
+network.add_friendship("Casey", "Madison")
 
-# 4. Test Edge Case: Non-existent person
-network.add_friendship("Alex", "Johnny")
+network.add_friendship("Alex", "Taylor")
 
 print("\n--- Current Social Network ---")
 network.print_network()
